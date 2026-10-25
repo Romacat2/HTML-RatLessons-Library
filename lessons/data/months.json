@@ -1,0 +1,197 @@
+{
+  "id": "lesson_days_months_full",
+  "title": "Дні тижня та місяці",
+  "exercises": [
+    {
+      "question": "Monday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "понеділок", "correct": true },
+        { "value": "квітень", "correct": false },
+        { "value": "субота", "correct": false }
+      ]
+    },
+    {
+      "question": "лютий",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "February", "correct": true },
+        { "value": "Friday", "correct": false },
+        { "value": "November", "correct": false }
+      ]
+    },
+    {
+      "question": "Tuesday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "вівторок", "correct": true },
+        { "value": "травень", "correct": false },
+        { "value": "неділя", "correct": false }
+      ]
+    },
+    {
+      "question": "серпень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "August", "correct": true },
+        { "value": "Sunday", "correct": false },
+        { "value": "January", "correct": false }
+      ]
+    },
+    {
+      "question": "Wednesday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "середа", "correct": true },
+        { "value": "жовтень", "correct": false },
+        { "value": "четвер", "correct": false }
+      ]
+    },
+    {
+      "question": "березень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "March", "correct": true },
+        { "value": "Thursday", "correct": false },
+        { "value": "June", "correct": false }
+      ]
+    },
+    {
+      "question": "Thursday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "четвер", "correct": true },
+        { "value": "грудень", "correct": false },
+        { "value": "понеділок", "correct": false }
+      ]
+    },
+    {
+      "question": "квітень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "April", "correct": true },
+        { "value": "Tuesday", "correct": false },
+        { "value": "September", "correct": false }
+      ]
+    },
+    {
+      "question": "Friday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "п'ятниця", "correct": true },
+        { "value": "липень", "correct": false },
+        { "value": "вівторок", "correct": false }
+      ]
+    },
+    {
+      "question": "травень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "May", "correct": true },
+        { "value": "Wednesday", "correct": false },
+        { "value": "October", "correct": false }
+      ]
+    },
+    {
+      "question": "Saturday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "субота", "correct": true },
+        { "value": "лютий", "correct": false },
+        { "value": "середа", "correct": false }
+      ]
+    },
+    {
+      "question": "червень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "June", "correct": true },
+        { "value": "Saturday", "correct": false },
+        { "value": "December", "correct": false }
+      ]
+    },
+    {
+      "question": "Sunday",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "неділя", "correct": true },
+        { "value": "березень", "correct": false },
+        { "value": "п'ятниця", "correct": false }
+      ]
+    },
+    {
+      "question": "липень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "July", "correct": true },
+        { "value": "Sunday", "correct": false },
+        { "value": "January", "correct": false }
+      ]
+    },
+    {
+      "question": "September",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "вересень", "correct": true },
+        { "value": "понеділок", "correct": false },
+        { "value": "серпень", "correct": false }
+      ]
+    },
+    {
+      "question": "жовтень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "October", "correct": true },
+        { "value": "Monday", "correct": false },
+        { "value": "May", "correct": false }
+      ]
+    },
+    {
+      "question": "November",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "листопад", "correct": true },
+        { "value": "вівторок", "correct": false },
+        { "value": "червень", "correct": false }
+      ]
+    },
+    {
+      "question": "грудень",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "December", "correct": true },
+        { "value": "Thursday", "correct": false },
+        { "value": "July", "correct": false }
+      ]
+    },
+    {
+      "question": "January",
+      "audio": true,
+      "lang": "en-US",
+      "options": [
+        { "value": "січень", "correct": true },
+        { "value": "четвер", "correct": false },
+        { "value": "серпень", "correct": false }
+      ]
+    }
+  ],
+  "type": "lessons"
+}

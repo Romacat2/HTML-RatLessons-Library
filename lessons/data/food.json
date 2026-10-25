@@ -1,0 +1,197 @@
+{
+  "id": "lesson_1792930230531_heh0rv",
+  "title": "Їжа",
+  "exercises": [
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Avocado_Hass_-_single_and_halved.jpg/1280px-Avocado_Hass_-_single_and_halved.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        {
+          "value": "avocado",
+          "correct": true
+        },
+        {
+          "value": "avacado",
+          "correct": false
+        },
+        {
+          "value": "avokado",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "strawberry",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        {
+          "value": "полуниця",
+          "correct": true
+        },
+        {
+          "value": "малина",
+          "correct": false
+        },
+        {
+          "value": "ожина",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "артишок",
+      "audio": false,
+      "lang": null,
+      "options": [
+        {
+          "value": "artichoke",
+          "correct": true
+        },
+        {
+          "value": "artichok",
+          "correct": false
+        },
+        {
+          "value": "artichock",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "cauliflower",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        {
+          "value": "цвітна капуста",
+          "correct": true
+        },
+        {
+          "value": "броколі",
+          "correct": false
+        },
+        {
+          "value": "капуста",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Pandborealisind.jpg/960px-Pandborealisind.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        {
+          "value": "shrimp",
+          "correct": true
+        },
+        {
+          "value": "shrimph",
+          "correct": false
+        },
+        {
+          "value": "shrymp",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "pineapple",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        {
+          "value": "ананас",
+          "correct": true
+        },
+        {
+          "value": "манго",
+          "correct": false
+        },
+        {
+          "value": "папая",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Garlic.jpg/500px-Garlic.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        {
+          "value": "garlic",
+          "correct": true
+        },
+        {
+          "value": "garlick",
+          "correct": false
+        },
+        {
+          "value": "galic",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "salmon",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        {
+          "value": "лосось",
+          "correct": true
+        },
+        {
+          "value": "тунець",
+          "correct": false
+        },
+        {
+          "value": "форель",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Feige-Schnitt.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "audio": false,
+      "lang": null,
+      "options": [
+        {
+          "value": "fig",
+          "correct": true
+        },
+        {
+          "value": "figh",
+          "correct": false
+        },
+        {
+          "value": "fygg",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "броколі",
+      "audio": false,
+      "lang": null,
+      "options": [
+        {
+          "value": "broccoli",
+          "correct": true
+        },
+        {
+          "value": "brocoli",
+          "correct": false
+        },
+        {
+          "value": "brockoli",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "type": "lessons"
+}
