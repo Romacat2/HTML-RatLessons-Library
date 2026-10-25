@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Встав літеру — Бібліотека Roma's Rat Games</title>
+		<link rel="icon" href="../icons/favicon.png">
+		<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style.css">
+		<script src="../nav.js"></script>
+		<style>
+			.hero {
+				margin-top: -1rem;
+				max-width: 100%;
+			}
+			
+			.page-title {
+				font-size: clamp(1.8rem, 5vw, 2.4rem);
+				margin: 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<a href="../index.html" class="csharp-btn" style="background:#888">← Бібліотека</a>
+			<app-nav></app-nav>
+		</nav>
+		<div class="main-content">
+			<div class="hero">
+				<h1 class="page-title">✏️ Встав літеру</h1>
+				<p class="hero-text" style="opacity: 0.7; font-weight: 400;">
+					Готові набори слів для вправ на орфографію. Імпортуй у застосунок файлом або посиланням.
+				</p>
+
+				<div class="library-grid" id="libraryGrid"></div>
+				<p class="library-empty" id="libraryEmpty" style="display:none;">
+					Поки що тут порожньо — завітай пізніше.
+				</p>
+			</div>
+		</div>
+
+		<script src="../lib.js"></script>
+		<script>
+			const gridEl = document.getElementById("libraryGrid");
+			const emptyEl = document.getElementById("libraryEmpty");
+
+			function renderPreview() {
+				// Картинок у spelling-уроках немає за дизайном — завжди заглушка.
+				return `<div class="lesson-card-preview-fallback">✏️</div>`;
+			}
+
+			(async () => {
+				try {
+					const lessons = await LibraryShared.loadLessons("data");
+					if (lessons.length === 0) {
+						emptyEl.style.display = "block";
+						return;
+					}
+					lessons.forEach((lesson) => {
+						gridEl.appendChild(LibraryShared.renderLessonCard(lesson, "data", renderPreview));
+					});
+			} catch (err) {
+				console.warn("Не вдалося завантажити бібліотеку уроків:", err);
+				emptyEl.textContent = "Не вдалося завантажити список уроків.";
+				emptyEl.style.display = "block";
+			}
+		})();
+		</script>
+	</body>
+</html>

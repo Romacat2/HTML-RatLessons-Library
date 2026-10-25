@@ -1,0 +1,262 @@
+/* Змінні теми — встановлюються через nav.js */
+:root {
+    --bg: #121212;
+    --text: #e0e0e0;
+}
+
+/* Базові стилі */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+    min-height: 100vh;
+    transition:
+        background-color 0.4s,
+        color 0.4s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Навігація */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
+}
+app-nav nav {
+    justify-content: flex-end;
+}
+
+/* Перемикач теми */
+.switch-container {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    transition: background-color 0.3s;
+}
+
+.switch-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* Контент сторінки */
+.main-content {
+    padding: 1rem;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .switch-container {
+        width: 50px;
+        height: 26px;
+    }
+
+    .switch-thumb {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1.5rem;
+}
+
+.hero-text {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    text-align: center;
+    color: var(--text);
+}
+
+.csharp-btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
+}
+
+.csharp-btn:hover,
+.csharp-btn:focus-visible {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Життя/серця — спільні для всіх ігор з 3 життями (множення, уроки,
+   встав літеру). Розмір підлаштовується viewport-висотою, бо серця
+   зазвичай живуть на екрані проходження гри (full-height, без скролу). */
+.hearts {
+    font-size: clamp(1.2rem, 4vh, 2.2rem);
+    letter-spacing: 0.3rem;
+    flex: 0 0 auto;
+}
+
+.heart-lost {
+    opacity: 0.25;
+    filter: grayscale(1);
+}
+
+/* Дощ з пацюків — спільна анімація при правильній відповіді.
+   Контейнер .rat-rain має бути position: fixed поверх усього інтерфейсу;
+   наповнюється елементами .rat-drop через rat-rain.js (spawnRatRain). */
+.rat-rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.rat-drop {
+    position: absolute;
+    top: -10vh;
+    font-size: var(--rat-size, 1.8rem);
+    animation: rat-fall var(--rat-duration, 1.4s) linear forwards;
+    animation-delay: var(--rat-delay, 0s);
+}
+
+@keyframes rat-fall {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(120vh) rotate(25deg);
+        opacity: 0.9;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rat-drop {
+        animation: none;
+        display: none;
+    }
+}
+
+/* --- Стилі бібліотеки уроків --- */
+
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0.5rem 0 2rem;
+}
+
+.lesson-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 2px solid color-mix(in srgb, var(--text) 18%, transparent);
+    background: color-mix(in srgb, var(--text) 5%, transparent);
+    overflow: hidden;
+}
+
+.lesson-card-preview {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.lesson-card-preview-fallback {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.lesson-card-body {
+    padding: 0.9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.lesson-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.lesson-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+.lesson-card-actions .csharp-btn {
+    padding: 0.55rem 0.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.library-empty {
+    text-align: center;
+    opacity: 0.65;
+    padding: 2rem 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.library-toast {
+    position: fixed;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #1c1c1c;
+    border: 1.5px solid color-mix(in srgb, #4caf50 60%, transparent);
+    color: var(--text);
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 200;
+    max-width: 90vw;
+    text-align: center;
+}
+
+.library-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
