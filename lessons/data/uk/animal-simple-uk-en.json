@@ -1,0 +1,207 @@
+{
+  "id": "lesson_1793464938852_90e92",
+  "title": "Animals (simple)",
+  "exercises": [
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Felis_silvestris_silvestris.jpg/960px-Felis_silvestris_silvestris.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "cet", "correct": false },
+        { "value": "cat", "correct": true },
+        { "value": "duck", "correct": false }
+      ]
+    },
+    {
+      "question": "cat",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "собака", "correct": false },
+        { "value": "кіт", "correct": true },
+        { "value": "вівця", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/%D0%9C%D0%B8%D0%BB%D0%BA%D0%B0.jpg/960px-%D0%9C%D0%B8%D0%BB%D0%BA%D0%B0.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "sheep", "correct": false },
+        { "value": "rabbit", "correct": false },
+        { "value": "dog", "correct": true }
+      ]
+    },
+    {
+      "question": "dog",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "коза", "correct": false },
+        { "value": "собака", "correct": true },
+        { "value": "вівця", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Sus_scrofa_scrofa.jpg/960px-Sus_scrofa_scrofa.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "peg", "correct": false },
+        { "value": "chicken", "correct": false },
+        { "value": "pig", "correct": true }
+      ]
+    },
+    {
+      "question": "pig",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "свиня", "correct": true },
+        { "value": "вівця", "correct": false },
+        { "value": "коза", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Grey_horse_1567.jpg/960px-Grey_horse_1567.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "duck", "correct": false },
+        { "value": "goat", "correct": false },
+        { "value": "horse", "correct": true }
+      ]
+    },
+    {
+      "question": "horse",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "корова", "correct": false },
+        { "value": "кінь", "correct": true },
+        { "value": "кролик", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Cow_female_black_white.jpg/960px-Cow_female_black_white.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "cow", "correct": true },
+        { "value": "caw", "correct": false },
+        { "value": "goat", "correct": false }
+      ]
+    },
+    {
+      "question": "cow",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "кролик", "correct": false },
+        { "value": "кіт", "correct": false },
+        { "value": "корова", "correct": true }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/960px-Flock_of_sheep.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "dog", "correct": false },
+        { "value": "cow", "correct": false },
+        { "value": "sheep", "correct": true }
+      ]
+    },
+    {
+      "question": "sheep",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "коза", "correct": false },
+        { "value": "качка", "correct": false },
+        { "value": "вівця", "correct": true }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Domestic_goat_kid_in_capeweed.jpg/1280px-Domestic_goat_kid_in_capeweed.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "horse", "correct": false },
+        { "value": "goat", "correct": true },
+        { "value": "gaot", "correct": false }
+      ]
+    },
+    {
+      "question": "goat",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "вівця", "correct": false },
+        { "value": "коза", "correct": true },
+        { "value": "кролик", "correct": false }
+      ]
+    },
+    {
+      "question": "https://dictionary.cambridge.org/uk/images/full/hen_noun_002_17601.jpg?version=6.0.83",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "cat", "correct": false },
+        { "value": "cow", "correct": false },
+        { "value": "chicken", "correct": true }
+      ]
+    },
+    {
+      "question": "chicken",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "курка", "correct": true },
+        { "value": "кінь", "correct": false },
+        { "value": "кролик", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ducks_in_plymouth%2C_massachusetts.jpg/1280px-Ducks_in_plymouth%2C_massachusetts.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "dack", "correct": false },
+        { "value": "duck", "correct": true },
+        { "value": "pig", "correct": false }
+      ]
+    },
+    {
+      "question": "duck",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "кінь", "correct": false },
+        { "value": "качка", "correct": true },
+        { "value": "вівця", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Oryctolagus_cuniculus_Rcdo.jpg/960px-Oryctolagus_cuniculus_Rcdo.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "pig", "correct": false },
+        { "value": "rabbit", "correct": true },
+        { "value": "horse", "correct": false }
+      ]
+    },
+    {
+      "question": "rabbit",
+      "audio": true,
+      "lang": "en-us",
+      "options": [
+        { "value": "курка", "correct": false },
+        { "value": "кролик", "correct": true },
+        { "value": "корова", "correct": false }
+      ]
+    }
+  ],
+  "type": "lessons"
+}

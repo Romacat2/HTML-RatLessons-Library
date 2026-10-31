@@ -1,0 +1,207 @@
+{
+  "id": "lesson_1793464938853_3b273",
+  "title": "Tiere (einfach)",
+  "exercises": [
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Felis_silvestris_silvestris.jpg/960px-Felis_silvestris_silvestris.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Schwein", "correct": false },
+        { "value": "Ketze", "correct": false },
+        { "value": "Katze", "correct": true }
+      ]
+    },
+    {
+      "question": "Katze",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "cat", "correct": true },
+        { "value": "duck", "correct": false },
+        { "value": "pig", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/%D0%9C%D0%B8%D0%BB%D0%BA%D0%B0.jpg/960px-%D0%9C%D0%B8%D0%BB%D0%BA%D0%B0.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Hund", "correct": true },
+        { "value": "Ziege", "correct": false },
+        { "value": "Kuh", "correct": false }
+      ]
+    },
+    {
+      "question": "Hund",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "chicken", "correct": false },
+        { "value": "dog", "correct": true },
+        { "value": "horse", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Sus_scrofa_scrofa.jpg/960px-Sus_scrofa_scrofa.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Schwein", "correct": true },
+        { "value": "Kuh", "correct": false },
+        { "value": "Shwein", "correct": false }
+      ]
+    },
+    {
+      "question": "Schwein",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "pig", "correct": true },
+        { "value": "duck", "correct": false },
+        { "value": "cat", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Grey_horse_1567.jpg/960px-Grey_horse_1567.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Hase", "correct": false },
+        { "value": "Pferd", "correct": true },
+        { "value": "Katze", "correct": false }
+      ]
+    },
+    {
+      "question": "Pferd",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "goat", "correct": false },
+        { "value": "horse", "correct": true },
+        { "value": "cat", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Cow_female_black_white.jpg/960px-Cow_female_black_white.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Pferd", "correct": false },
+        { "value": "Kue", "correct": false },
+        { "value": "Kuh", "correct": true }
+      ]
+    },
+    {
+      "question": "Kuh",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "pig", "correct": false },
+        { "value": "cow", "correct": true },
+        { "value": "rabbit", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/960px-Flock_of_sheep.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Katze", "correct": false },
+        { "value": "Schwein", "correct": false },
+        { "value": "Schaf", "correct": true }
+      ]
+    },
+    {
+      "question": "Schaf",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "rabbit", "correct": false },
+        { "value": "goat", "correct": false },
+        { "value": "sheep", "correct": true }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Domestic_goat_kid_in_capeweed.jpg/1280px-Domestic_goat_kid_in_capeweed.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Ziege", "correct": true },
+        { "value": "Katze", "correct": false },
+        { "value": "Zieger", "correct": false }
+      ]
+    },
+    {
+      "question": "Ziege",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "cat", "correct": false },
+        { "value": "goat", "correct": true },
+        { "value": "cow", "correct": false }
+      ]
+    },
+    {
+      "question": "https://dictionary.cambridge.org/uk/images/full/hen_noun_002_17601.jpg?version=6.0.83",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Hase", "correct": false },
+        { "value": "Huhn", "correct": true },
+        { "value": "Ziege", "correct": false }
+      ]
+    },
+    {
+      "question": "Huhn",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "chicken", "correct": true },
+        { "value": "sheep", "correct": false },
+        { "value": "duck", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ducks_in_plymouth%2C_massachusetts.jpg/1280px-Ducks_in_plymouth%2C_massachusetts.jpg?utm_source=uk.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Ente", "correct": true },
+        { "value": "Schwein", "correct": false },
+        { "value": "Ende", "correct": false }
+      ]
+    },
+    {
+      "question": "Ente",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "rabbit", "correct": false },
+        { "value": "duck", "correct": true },
+        { "value": "dog", "correct": false }
+      ]
+    },
+    {
+      "question": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Oryctolagus_cuniculus_Rcdo.jpg/960px-Oryctolagus_cuniculus_Rcdo.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "audio": false,
+      "lang": null,
+      "options": [
+        { "value": "Schaf", "correct": false },
+        { "value": "Hase", "correct": true },
+        { "value": "Hund", "correct": false }
+      ]
+    },
+    {
+      "question": "Hase",
+      "audio": true,
+      "lang": "de-de",
+      "options": [
+        { "value": "sheep", "correct": false },
+        { "value": "dog", "correct": false },
+        { "value": "rabbit", "correct": true }
+      ]
+    }
+  ],
+  "type": "lessons"
+}

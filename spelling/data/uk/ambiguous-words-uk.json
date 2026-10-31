@@ -1,6 +1,6 @@
 {
   "id": "spelling_1792921086286_l5godf",
-  "title": "Складні слова",
+  "title": "Неоднозначні слова",
   "sentences": [
     { "text": "Президент", "blanks": [2] },
     { "text": "Директор", "blanks": [1] },
@@ -10,7 +10,8 @@
     { "text": "Минулий", "blanks": [1] },
     { "text": "Агентство", "blanks": [4, 5] },
     { "text": "Вогко", "blanks": [2] },
-    { "text": "Боротьба", "blanks": [4] }
+    { "text": "Боротьба", "blanks": [4] },
+    { "text": "Коридор", "blanks": [1] }
   ],
   "type": "spelling"
 }
