@@ -1,0 +1,17 @@
+{
+  "id": "spelling_1793465102372_c91e2a",
+  "title": "Schwierige Wörter",
+  "sentences": [
+    { "text": "Straße", "blanks": [4] },
+    { "text": "Nummer", "blanks": [3] },
+    { "text": "Adresse", "blanks": [4, 5] },
+    { "text": "Rhythmus", "blanks": [2] },
+    { "text": "Känguru", "blanks": [1] },
+    { "text": "Pfeffer", "blanks": [3, 4] },
+    { "text": "Bibliothek", "blanks": [1] },
+    { "text": "Quelle", "blanks": [3] },
+    { "text": "Rucksack", "blanks": [3] },
+    { "text": "Schifffahrt", "blanks": [4, 5, 6] }
+  ],
+  "type": "spelling"
+}

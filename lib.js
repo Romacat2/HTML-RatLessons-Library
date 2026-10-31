@@ -8,6 +8,12 @@ const LibraryShared = (() => {
     return typeof value === "string" && /^https?:\/\//i.test(value.trim());
   }
 
+  function tr(key, params) {
+    // i18n.js може бути не підключений на якихось сторінках —
+    // тоді просто показуємо сам ключ, аби не впасти з помилкою.
+    return window.I18N ? window.I18N.t(key, params) : key;
+  }
+
   function base64UrlEncode(bytes) {
     let binary = "";
     bytes.forEach((b) => (binary += String.fromCharCode(b)));
@@ -58,8 +64,18 @@ const LibraryShared = (() => {
     toast._hideTimer = setTimeout(() => toast.classList.remove("show"), 2200);
   }
 
-  // Завантажує manifest.json (список імен файлів) і кожен урок з data/.
-  async function loadLessons(dataDir) {
+  // Мовна тека: baseDir — спільний корінь ("data"), фактичні
+  // уроки лежать в baseDir/<lang>/. Мова береться з I18N.getLang(),
+  // якщо i18n.js підключений; інакше — фолбек "uk" (стара поведінка).
+  function resolveDataDir(baseDir) {
+    const lang = window.I18N ? window.I18N.getLang() : "uk";
+    return `${baseDir}/${lang}`;
+  }
+
+  // Завантажує manifest.json (список імен файлів) і кожен урок
+  // з поточної мовної теки baseDir/<lang>/.
+  async function loadLessons(baseDir) {
+    const dataDir = resolveDataDir(baseDir);
     const manifestRes = await fetch(`${dataDir}/manifest.json`);
     if (!manifestRes.ok) {
       throw new Error(`Не вдалося завантажити manifest.json (${manifestRes.status})`);
@@ -82,9 +98,55 @@ const LibraryShared = (() => {
     return lessons.filter(Boolean);
   }
 
+  // Перемальовує сітку карток уроків у gridEl для поточної мови.
+  // Викликається і при першому завантаженні сторінки, і повторно —
+  // щоразу, коли I18N.onChange() повідомляє про зміну мови.
+  //
+  // baseDir — спільний корінь даних ("data"), саме той, що й
+  // передається в loadLessons(). renderPreview(lesson) повертає
+  // innerHTML прев'ю-блоку картки (своя для lessons/ і spelling/).
+  //
+  // Повертає проміс, який виконується після завершення перемальовки
+  // (зручно, якщо виклику потрібно знати, що рендер закінчився).
+  async function renderLibraryGrid({ baseDir, gridEl, emptyEl, renderPreview, onError }) {
+    gridEl.innerHTML = "";
+    emptyEl.style.display = "none";
+
+    try {
+      const lessons = await loadLessons(baseDir);
+      if (lessons.length === 0) {
+        emptyEl.style.display = "block";
+        return;
+      }
+      lessons.forEach((lesson) => {
+        gridEl.appendChild(renderLessonCard(lesson, renderPreview));
+      });
+    } catch (err) {
+      console.warn("Не вдалося завантажити бібліотеку уроків:", err);
+      if (typeof onError === "function") {
+        onError(err);
+      } else {
+        emptyEl.textContent = tr("library.lessons.loadError");
+        emptyEl.style.display = "block";
+      }
+    }
+  }
+
+  // Підписує сторінку на зміну мови: при I18N.onChange() перемальовує
+  // сітку карток заново з мовної теки нового I18N.getLang(). Викликати
+  // один раз на сторінці, одразу після першого renderLibraryGrid().
+  // Повертає функцію відписки від I18N.onChange (може знадобитись,
+  // хоча на цих сторінках сторінка просто живе, поки підписка жива).
+  function watchLanguageChanges(options) {
+    if (!window.I18N) return () => {};
+    return window.I18N.onChange(() => {
+      renderLibraryGrid(options);
+    });
+  }
+
   // Будує одну картку уроку. renderPreview(lesson) повертає innerHTML
   // прев'ю-блоку (картинка або заглушка) — різне для lessons/spelling.
-  function renderLessonCard(lesson, dataDir, renderPreview) {
+  function renderLessonCard(lesson, renderPreview) {
     const card = document.createElement("div");
     card.className = "lesson-card";
 
@@ -94,10 +156,10 @@ const LibraryShared = (() => {
     card.innerHTML = `
       ${previewHtml}
       <div class="lesson-card-body">
-        <div class="lesson-card-title">${escapeHtml(lesson.title || "Без назви")}</div>
+        <div class="lesson-card-title">${escapeHtml(lesson.title || tr("library.card.untitled"))}</div>
         <div class="lesson-card-actions">
-          <a href="#" class="csharp-btn" style="background:#607d8b" data-action="file">📄 Як файл</a>
-          <a href="#" class="csharp-btn" style="background:#009688" data-action="link">🔗 Як посилання</a>
+          <a href="#" class="csharp-btn" style="background:#607d8b" data-action="file">${tr("library.card.asFile")}</a>
+          <a href="#" class="csharp-btn" style="background:#009688" data-action="link">${tr("library.card.asLink")}</a>
         </div>
       </div>
     `;
@@ -148,31 +210,22 @@ const LibraryShared = (() => {
       const box = document.createElement("div");
       box.className = "share-link-box";
       box.innerHTML = `
-          <p style="margin:0; font-size:0.85rem; opacity:0.8;">
-              Якщо застосунок не відкрився автоматично — скопіюй посилання і встав його в адресний рядок браузера на телефоні:
-          </p>
+          <p class="share-link-hint">${tr("library.card.shareFallbackHint")}</p>
           <div class="share-link-text">${escapeHtml(shareUrl)}</div>
           <div class="lesson-card-actions">
-              <a href="#" class="csharp-btn" style="background:#4caf50" id="fallbackCopyBtn">📋 Копіювати</a>
-              ${navigator.share ? '<a href="#" class="csharp-btn" style="background:#009688" id="fallbackShareBtn">📤 Поділитись</a>' : ""}
+              <a href="#" class="csharp-btn" style="background:#4caf50" id="fallbackCopyBtn">${tr("library.card.copy")}</a>
+              ${navigator.share ? `<a href="#" class="csharp-btn" style="background:#009688" id="fallbackShareBtn">${tr("library.card.share")}</a>` : ""}
           </div>
       `;
       document.body.appendChild(box);
-      box.style.position = "fixed";
-      box.style.bottom = "1rem";
-      box.style.left = "50%";
-      box.style.transform = "translateX(-50%)";
-      box.style.zIndex = "300";
-      box.style.maxWidth = "90vw";
-      box.style.width = "360px";
 
       box.querySelector("#fallbackCopyBtn").addEventListener("click", async (e) => {
           e.preventDefault();
           try {
               await navigator.clipboard.writeText(shareUrl);
-              showToast("Посилання скопійовано!");
+              showToast(tr("library.card.linkCopied"));
           } catch {
-              prompt("Скопіюй посилання вручну:", shareUrl);
+              prompt(tr("library.card.copyManually"), shareUrl);
           }
           box.remove();
       });
@@ -202,6 +255,8 @@ const LibraryShared = (() => {
     pickPreviewImage,
     loadLessons,
     renderLessonCard,
+    renderLibraryGrid,
+    watchLanguageChanges,
     showToast,
     escapeHtml,
   };

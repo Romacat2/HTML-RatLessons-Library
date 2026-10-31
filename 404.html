@@ -3,11 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>404 — Roma's Rat Games - RatLessons</title>
+		<title data-i18n="library.404.title">404 — Roma's Rat Games - RatLessons</title>
 		<link rel="icon" href="icons/favicon.png">
 		<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 		<link rel="stylesheet" href="style.css">
 		<meta name="theme-color" content="#121212">
+		<script src="locales/uk.js"></script>
+		<script src="locales/en.js"></script>
+		<script src="locales/de.js"></script>
+		<script src="i18n.js"></script>
+		<script>I18N.detectAndLoad();</script>
 		<script src="nav.js"></script>
 		<style>
 			.hero {
@@ -30,12 +35,14 @@
                     ">
 					404
 				</h1>
-				<p class="hero-text">Сторінку не знайдено!</p>
+				<p class="hero-text" data-i18n="library.404.notFound">Сторінку не знайдено!</p>
 				<a href="index.html"
 				   class="csharp-btn"
 				   style="background: #ff2222"
+				   data-i18n="library.404.backHome"
 				>← На головну</a>
 			</div>
 		</div>
+		<script>I18N.init();</script>
 	</body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "id": "spelling_1793465102371_7ad6bf",
+  "title": "Tricky words",
+  "sentences": [
+    { "text": "Necessary", "blanks": [2, 5] },
+    { "text": "Definitely", "blanks": [3] },
+    { "text": "Separate", "blanks": [2] },
+    { "text": "Accommodate", "blanks": [2, 5] },
+    { "text": "Embarrass", "blanks": [4, 7] },
+    { "text": "Occurrence", "blanks": [1, 4] },
+    { "text": "Rhythm", "blanks": [2] },
+    { "text": "Conscience", "blanks": [3] },
+    { "text": "Restaurant", "blanks": [5] },
+    { "text": "Questionnaire", "blanks": [7, 8] }
+  ],
+  "type": "spelling"
+}

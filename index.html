@@ -3,11 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Бібліотека уроків — Roma's Rat Games</title>
+		<title data-i18n="library.index.title">Бібліотека уроків — Roma's Rat Games</title>
 		<link rel="icon" href="icons/favicon.png">
 		<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 		<link rel="stylesheet" href="style.css">
 		<meta name="theme-color" content="#121212">
+		<script src="locales/uk.js"></script>
+		<script src="locales/en.js"></script>
+		<script src="locales/de.js"></script>
+		<script src="i18n.js"></script>
+		<script>I18N.detectAndLoad();</script>
 		<script src="nav.js"></script>
 		<style>
 			.hero {
@@ -15,14 +20,14 @@
 				align-items: stretch;
 				max-width: 100%;
 			}
-			
+
 			.page-title {
 				font-size: clamp(2rem, 6vw, 3rem);
 				line-height: 1.1;
 				margin: 0;
 				text-align: center;
 			}
-			
+
 			.carousel {
 				display: flex;
 				gap: 1.2rem;
@@ -33,7 +38,7 @@
 				justify-content: center;
 				flex-wrap: wrap;
 			}
-			
+
 			.game-card {
 				flex: 0 0 auto;
 				width: 220px;
@@ -42,7 +47,7 @@
 				flex-direction: column;
 				gap: 0.6rem;
 			}
-			
+
 			.game-card-main {
 				width: 100%;
 				height: 180px;
@@ -62,22 +67,22 @@
 				text-decoration: none;
 				transition: transform 0.15s ease, background 0.2s ease;
 			}
-			
+
 			.game-card-main:hover,
 			.game-card-main:focus-visible {
 				transform: translateY(-4px);
 				background: color-mix(in srgb, var(--text) 14%, transparent);
 			}
-			
+
 			.game-emoji {
 				font-size: 2.8rem;
 			}
-			
+
 			.game-name {
 				font-size: 1.05rem;
 				font-weight: 600;
 			}
-			
+
 			.game-desc {
 				font-size: 0.8rem;
 				opacity: 0.65;
@@ -91,9 +96,9 @@
 		</nav>
 		<div class="main-content">
 			<div class="hero">
-				<p class="hero-text" style="font-size: clamp(1.4rem, 3vw, 1.8rem);">🐀 Roma's Rat Games</p>
-				<h1 class="page-title">Бібліотека уроків</h1>
-				<p class="hero-text" style="opacity: 0.7; font-weight: 400;">
+				<p class="hero-text" style="font-size: clamp(1.4rem, 3vw, 1.8rem);" data-i18n="library.index.heroText">🐀 Roma's Rat Games</p>
+				<h1 class="page-title" data-i18n="library.index.pageTitle">Бібліотека уроків</h1>
+				<p class="hero-text" style="opacity: 0.7; font-weight: 400;" data-i18n="library.index.subtitle">
 					Обирай готовий урок і додавай його у застосунок — файлом або посиланням.
 				</p>
 
@@ -101,20 +106,21 @@
 					<a href="lessons/index.html" class="game-card">
 						<div class="game-card-main">
 							<span class="game-emoji">🖼️</span>
-							<span class="game-name">Уроки</span>
-							<span class="game-desc">Флешкартки з картинками</span>
+							<span class="game-name" data-i18n="library.index.game.lessons.name">Уроки</span>
+							<span class="game-desc" data-i18n="library.index.game.lessons.desc">Флешкартки з картинками</span>
 						</div>
 					</a>
 
 					<a href="spelling/index.html" class="game-card">
 						<div class="game-card-main">
 							<span class="game-emoji">✏️</span>
-							<span class="game-name">Встав літеру</span>
-							<span class="game-desc">Орфографія, слова з пропусками</span>
+							<span class="game-name" data-i18n="library.index.game.spelling.name">Встав літеру</span>
+							<span class="game-desc" data-i18n="library.index.game.spelling.desc">Орфографія, слова з пропусками</span>
 						</div>
 					</a>
 				</div>
 			</div>
 		</div>
+		<script>I18N.init();</script>
 	</body>
 </html>
