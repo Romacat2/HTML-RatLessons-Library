@@ -19,7 +19,7 @@
 				margin-top: -1rem;
 				max-width: 100%;
 			}
-
+			
 			.page-title {
 				font-size: clamp(1.8rem, 5vw, 2.4rem);
 				margin: 0;
@@ -29,7 +29,7 @@
 	</head>
 	<body>
 		<nav>
-			<a href="../index.html" class="csharp-btn" style="background:#888" data-i18n="library.spelling.backHome">← Бібліотека</a>
+			<a href="../index.html" id="backBtn" class="csharp-btn" style="background:#888" data-i18n="library.lessons.backHome">← Бібліотека</a>
 			<app-nav></app-nav>
 		</nav>
 		<div class="main-content">
@@ -69,6 +69,7 @@
 				},
 			};
 
+			LibraryShared.setupBackButton("#backBtn", "library.spelling.backToApp");
 			LibraryShared.renderLibraryGrid(gridOptions);
 			LibraryShared.watchLanguageChanges(gridOptions);
 		</script>

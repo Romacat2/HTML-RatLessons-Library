@@ -4,6 +4,21 @@
 // репозиторієм і не повинна залежати від коду іншого репо.
 
 const LibraryShared = (() => {
+  function isInApp() {
+    return typeof window.AndroidNav !== "undefined";
+  }
+
+  function setupBackButton(selector, i18nKey) {
+    const btn = document.querySelector(selector);
+    if (!btn || !isInApp()) return;
+
+    btn.textContent = tr(i18nKey);
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.AndroidNav.goBack();
+    });
+  }
+
   function isImage(value) {
     return typeof value === "string" && /^https?:\/\//i.test(value.trim());
   }
@@ -17,7 +32,10 @@ const LibraryShared = (() => {
   function base64UrlEncode(bytes) {
     let binary = "";
     bytes.forEach((b) => (binary += String.fromCharCode(b)));
-    return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    return btoa(binary)
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
   }
 
   async function encodeLessonForUrl(lessonWithType) {
@@ -25,7 +43,9 @@ const LibraryShared = (() => {
     const bytes = new TextEncoder().encode(json);
     if (typeof CompressionStream === "function") {
       try {
-        const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"));
+        const stream = new Blob([bytes])
+          .stream()
+          .pipeThrough(new CompressionStream("gzip"));
         const compressed = await new Response(stream).arrayBuffer();
         return base64UrlEncode(new Uint8Array(compressed));
       } catch {
@@ -45,10 +65,12 @@ const LibraryShared = (() => {
   }
 
   function slugifyTitle(title) {
-    return (title || "bez-nazvy")
-      .toLowerCase()
-      .replace(/[^a-zа-яіїєґ0-9]+/giu, "-")
-      .replace(/^-+|-+$/g, "") || "bez-nazvy";
+    return (
+      (title || "bez-nazvy")
+        .toLowerCase()
+        .replace(/[^a-zа-яіїєґ0-9]+/giu, "-")
+        .replace(/^-+|-+$/g, "") || "bez-nazvy"
+    );
   }
 
   function showToast(message) {
@@ -78,7 +100,9 @@ const LibraryShared = (() => {
     const dataDir = resolveDataDir(baseDir);
     const manifestRes = await fetch(`${dataDir}/manifest.json`);
     if (!manifestRes.ok) {
-      throw new Error(`Не вдалося завантажити manifest.json (${manifestRes.status})`);
+      throw new Error(
+        `Не вдалося завантажити manifest.json (${manifestRes.status})`,
+      );
     }
     const fileNames = await manifestRes.json();
 
@@ -108,7 +132,13 @@ const LibraryShared = (() => {
   //
   // Повертає проміс, який виконується після завершення перемальовки
   // (зручно, якщо виклику потрібно знати, що рендер закінчився).
-  async function renderLibraryGrid({ baseDir, gridEl, emptyEl, renderPreview, onError }) {
+  async function renderLibraryGrid({
+    baseDir,
+    gridEl,
+    emptyEl,
+    renderPreview,
+    onError,
+  }) {
     gridEl.innerHTML = "";
     emptyEl.style.display = "none";
 
@@ -158,21 +188,25 @@ const LibraryShared = (() => {
       <div class="lesson-card-body">
         <div class="lesson-card-title">${escapeHtml(lesson.title || tr("library.card.untitled"))}</div>
         <div class="lesson-card-actions">
+          <a href="#" class="csharp-btn" style="background:#4caf50" data-action="link">🔗 ${tr("library.card.asLink")}</a>
           <a href="#" class="csharp-btn" style="background:#607d8b" data-action="file">${tr("library.card.asFile")}</a>
-          <a href="#" class="csharp-btn" style="background:#009688" data-action="link">${tr("library.card.asLink")}</a>
         </div>
       </div>
     `;
 
-    card.querySelector('[data-action="file"]').addEventListener("click", (e) => {
-      e.preventDefault();
-      downloadLessonFile(lesson, fileName);
-    });
+    card
+      .querySelector('[data-action="file"]')
+      .addEventListener("click", (e) => {
+        e.preventDefault();
+        downloadLessonFile(lesson, fileName);
+      });
 
-    card.querySelector('[data-action="link"]').addEventListener("click", async (e) => {
-      e.preventDefault();
-      await shareLessonLink(lesson);
-    });
+    card
+      .querySelector('[data-action="link"]')
+      .addEventListener("click", async (e) => {
+        e.preventDefault();
+        await shareLessonLink(lesson);
+      });
 
     return card;
   }
@@ -190,26 +224,26 @@ const LibraryShared = (() => {
   }
 
   async function shareLessonLink(lesson) {
-      const { __file, id, ...rest } = lesson;
-      const encoded = await encodeLessonForUrl(rest);
-      const shareUrl = `ratlessons://import?data=${encoded}`;
+    const { __file, id, ...rest } = lesson;
+    const encoded = await encodeLessonForUrl(rest);
+    const shareUrl = `ratlessons://import?data=${encoded}`;
 
-      const link = document.createElement("a");
-      link.href = shareUrl;
-      link.style.display = "none";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+    const link = document.createElement("a");
+    link.href = shareUrl;
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
 
-      setTimeout(() => {
-          showShareFallback(shareUrl, lesson.title);
-      }, 700);
+    setTimeout(() => {
+      showShareFallback(shareUrl, lesson.title);
+    }, 700);
   }
 
   function showShareFallback(shareUrl, title) {
-      const box = document.createElement("div");
-      box.className = "share-link-box";
-      box.innerHTML = `
+    const box = document.createElement("div");
+    box.className = "share-link-box";
+    box.innerHTML = `
           <p class="share-link-hint">${tr("library.card.shareFallbackHint")}</p>
           <div class="share-link-text">${escapeHtml(shareUrl)}</div>
           <div class="lesson-card-actions">
@@ -217,31 +251,33 @@ const LibraryShared = (() => {
               ${navigator.share ? `<a href="#" class="csharp-btn" style="background:#009688" id="fallbackShareBtn">${tr("library.card.share")}</a>` : ""}
           </div>
       `;
-      document.body.appendChild(box);
+    document.body.appendChild(box);
 
-      box.querySelector("#fallbackCopyBtn").addEventListener("click", async (e) => {
-          e.preventDefault();
-          try {
-              await navigator.clipboard.writeText(shareUrl);
-              showToast(tr("library.card.linkCopied"));
-          } catch {
-              prompt(tr("library.card.copyManually"), shareUrl);
-          }
-          box.remove();
+    box
+      .querySelector("#fallbackCopyBtn")
+      .addEventListener("click", async (e) => {
+        e.preventDefault();
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          showToast(tr("library.card.linkCopied"));
+        } catch {
+          prompt(tr("library.card.copyManually"), shareUrl);
+        }
+        box.remove();
       });
 
-      const shareBtn = box.querySelector("#fallbackShareBtn");
-      if (shareBtn) {
-          shareBtn.addEventListener("click", async (e) => {
-              e.preventDefault();
-              try {
-                  await navigator.share({ title, url: shareUrl });
-              } catch {}
-              box.remove();
-          });
-      }
+    const shareBtn = box.querySelector("#fallbackShareBtn");
+    if (shareBtn) {
+      shareBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        try {
+          await navigator.share({ title, url: shareUrl });
+        } catch {}
+        box.remove();
+      });
+    }
 
-      setTimeout(() => box.remove(), 8000);
+    setTimeout(() => box.remove(), 8000);
   }
 
   function escapeHtml(str) {
@@ -259,5 +295,7 @@ const LibraryShared = (() => {
     watchLanguageChanges,
     showToast,
     escapeHtml,
+    isInApp,
+    setupBackButton,
   };
 })();
