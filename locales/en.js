@@ -48,4 +48,29 @@ window.I18N_DICT_EN = {
 
   // --- app-nav ---
   "nav.chooseLang": "Choose language",
+
+  // --- privacy-policy ---
+  "library.privacy.title": "Privacy Policy — Roma's Rat Games",
+  "library.privacy.heroText": "🐀 Roma's Rat Games",
+  "library.privacy.pageTitle": "Privacy Policy",
+  "library.privacy.lastUpdated": "Last updated: November 23, 2026",
+  "library.privacy.intro":
+    "RatLessons is designed with privacy in mind, especially because it is used by children.",
+  "library.privacy.collect.heading": "Data we collect",
+  "library.privacy.collect.body":
+    "None. RatLessons does not collect, transmit, or share any personal data, usage data, analytics, advertising identifiers, or crash reports. The app contains no third-party SDKs for analytics, advertising, or tracking.",
+  "library.privacy.stored.heading": "Data stored on your device",
+  "library.privacy.stored.intro":
+    "Lessons created by parents or guardians (questions, answers, and related content) are stored locally on your device using the browser's localStorage mechanism, inside the app's WebView. This data:",
+  "library.privacy.stored.list":
+    "<ul><li>Never leaves your device automatically.</li><li>Is not transmitted to any server, to the developer, or to any third party.</li><li>Can be exported manually by the user (e.g., to share a lesson file with another device), but this export is a deliberate, user-initiated action and does not involve any analytics or automatic data collection.</li></ul>",
+  "library.privacy.children.heading": "Children's privacy",
+  "library.privacy.children.body":
+    "RatLessons is designed for use by children, typically with content created by a parent or guardian. Because the app collects no personal data of any kind, it does not knowingly collect personal information from children, in line with COPPA and similar regulations.",
+  "library.privacy.changes.heading": "Changes to this policy",
+  "library.privacy.changes.body":
+    'If this policy changes, the updated version will be posted at this same location with a new "Last updated" date.',
+  "library.privacy.contact.heading": "Contact",
+  "library.privacy.contact.body":
+    'For questions about this policy, contact: <a href="mailto:romablackrat@ukr.net">romablackrat@ukr.net</a>',
 };

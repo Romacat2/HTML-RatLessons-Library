@@ -50,4 +50,29 @@ window.I18N_DICT_DE = {
 
   // --- app-nav ---
   "nav.chooseLang": "Sprache wählen",
+
+  // --- privacy policy ---
+  "library.privacy.title": "Datenschutzerklärung — Roma's Rat Games",
+  "library.privacy.heroText": "🐀 Roma's Rat Games",
+  "library.privacy.pageTitle": "Datenschutzerklärung",
+  "library.privacy.lastUpdated": "Zuletzt aktualisiert: 23. November 2026",
+  "library.privacy.intro":
+    "RatLessons wurde mit Blick auf den Datenschutz entwickelt, insbesondere weil die App von Kindern genutzt wird.",
+  "library.privacy.collect.heading": "Von uns erhobene Daten",
+  "library.privacy.collect.body":
+    "Keine. RatLessons erhebt, überträgt oder teilt keinerlei personenbezogene Daten, Nutzungsdaten, Analysedaten, Werbekennungen oder Absturzberichte. Die App enthält keine Dritt-SDKs für Analyse, Werbung oder Tracking.",
+  "library.privacy.stored.heading": "Auf dem Gerät gespeicherte Daten",
+  "library.privacy.stored.intro":
+    "Von Eltern oder Erziehungsberechtigten erstellte Lektionen (Fragen, Antworten und zugehörige Inhalte) werden lokal auf Ihrem Gerät mittels des localStorage-Mechanismus des Browsers innerhalb der WebView der App gespeichert. Diese Daten:",
+  "library.privacy.stored.list":
+    "<ul><li>Verlassen Ihr Gerät niemals automatisch.</li><li>Werden an keinen Server, an den Entwickler oder an Dritte übertragen.</li><li>Können vom Nutzer manuell exportiert werden (z. B. um eine Lektionsdatei mit einem anderen Gerät zu teilen), dies geschieht jedoch als bewusste, vom Nutzer veranlasste Aktion ohne jegliche Analyse oder automatische Datenerhebung.</li></ul>",
+  "library.privacy.children.heading": "Datenschutz für Kinder",
+  "library.privacy.children.body":
+    "RatLessons ist für die Nutzung durch Kinder konzipiert, in der Regel mit von Eltern oder Erziehungsberechtigten erstellten Inhalten. Da die App keinerlei personenbezogene Daten erhebt, erhebt sie wissentlich keine personenbezogenen Daten von Kindern, im Einklang mit COPPA und ähnlichen Vorschriften.",
+  "library.privacy.changes.heading": "Änderungen dieser Richtlinie",
+  "library.privacy.changes.body":
+    'Sollte sich diese Richtlinie ändern, wird die aktualisierte Version an derselben Stelle mit einem neuen Datum "Zuletzt aktualisiert" veröffentlicht.',
+  "library.privacy.contact.heading": "Kontakt",
+  "library.privacy.contact.body":
+    'Bei Fragen zu dieser Richtlinie kontaktieren Sie: <a href="mailto:romablackrat@ukr.net">romablackrat@ukr.net</a>',
 };

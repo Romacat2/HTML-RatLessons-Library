@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title data-i18n="library.privacy.title">Політика конфіденційності — Roma's Rat Games</title>
+		<link rel="icon" href="icons/favicon.png">
+		<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+		<link rel="stylesheet" href="style.css">
+		<meta name="theme-color" content="#121212">
+		<script src="locales/uk.js"></script>
+		<script src="locales/en.js"></script>
+		<script src="locales/de.js"></script>
+		<script src="i18n.js"></script>
+		<script>I18N.detectAndLoad();</script>
+		<script src="nav.js"></script>
+		<style>
+			.hero {
+				margin-top: -1rem;
+				align-items: stretch;
+				max-width: 100%;
+			}
+			
+			.page-title {
+				font-size: clamp(2rem, 6vw, 3rem);
+				line-height: 1.1;
+				margin: 0;
+				text-align: center;
+			}
+			
+			.policy-doc {
+				max-width: 720px;
+				margin: 0 auto;
+				padding: 1.5rem 1rem 3rem;
+				text-align: left;
+			}
+			
+			.policy-intro {
+				margin: 0 auto;
+				padding: 1.5rem 1rem 3rem;
+				text-align: left;
+			}
+			
+			.policy-updated {
+				text-align: center;
+				opacity: 0.6;
+				font-size: 0.9rem;
+				margin: 0.5rem 0 2rem;
+			}
+			
+			.policy-section {
+				margin-bottom: 1.8rem;
+				padding: 1.2rem 1.4rem;
+				border-radius: 18px;
+				border: 2px solid color-mix(in srgb, var(--text) 18%, transparent);
+				background: color-mix(in srgb, var(--text) 6%, transparent);
+			}
+			
+			.policy-section h2 {
+				margin: 0 0 0.6rem;
+				font-size: 1.15rem;
+			}
+			
+			.policy-section p,
+			.policy-section ul {
+				margin: 0.4rem 0;
+				opacity: 0.85;
+				line-height: 1.5;
+			}
+			
+			.policy-section ul {
+				padding-left: 1.3rem;
+			}
+			
+			.policy-section a {
+				color: inherit;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div></div>
+			<app-nav></app-nav>
+		</nav>
+		<div class="main-content">
+			<div class="hero">
+				<p class="hero-text" style="font-size: clamp(1.4rem, 3vw, 1.8rem);" data-i18n="library.privacy.heroText">🐀 Roma's Rat Games</p>
+				<h1 class="page-title" data-i18n="library.privacy.pageTitle">Політика конфіденційності</h1>
+				<p class="policy-updated" data-i18n="library.privacy.lastUpdated">Останнє оновлення: 23 листопада 2026</p>
+
+				<div class="policy-doc">
+					<p class="policy-intro" data-i18n="library.privacy.intro">
+						RatLessons розроблено з урахуванням приватності, особливо тому, що застосунком користуються діти.
+					</p>
+
+					<div class="policy-section">
+						<h2 data-i18n="library.privacy.collect.heading">Дані, які ми збираємо</h2>
+						<p data-i18n="library.privacy.collect.body">
+							Жодних. RatLessons не збирає, не передає і не ділиться жодними персональними даними, даними про використання, аналітикою, рекламними ідентифікаторами чи звітами про збої. Застосунок не містить сторонніх SDK для аналітики, реклами чи відстеження.
+						</p>
+					</div>
+
+					<div class="policy-section">
+						<h2 data-i18n="library.privacy.stored.heading">Дані, що зберігаються на пристрої</h2>
+						<p data-i18n="library.privacy.stored.intro">
+							Уроки, створені батьками чи опікунами (питання, відповіді та пов'язаний контент), зберігаються локально на вашому пристрої за допомогою механізму localStorage браузера, всередині WebView застосунку. Ці дані:
+						</p>
+						<div data-i18n-html="library.privacy.stored.list">
+							<ul>
+								<li>Ніколи автоматично не залишають ваш пристрій.</li>
+								<li>Не передаються на жоден сервер, розробнику чи будь-якій третій стороні.</li>
+								<li>Можуть бути вручну експортовані користувачем (наприклад, щоб поділитись файлом уроку з іншим пристроєм), але такий експорт — це свідома дія користувача, яка не пов'язана з жодною аналітикою чи автоматичним збором даних.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="policy-section">
+						<h2 data-i18n="library.privacy.children.heading">Конфіденційність дітей</h2>
+						<p data-i18n="library.privacy.children.body">
+							RatLessons призначений для використання дітьми, зазвичай з контентом, створеним батьками чи опікунами. Оскільки застосунок не збирає жодних персональних даних, він свідомо не збирає особисту інформацію дітей, відповідно до COPPA та подібних регуляцій.
+						</p>
+					</div>
+
+					<div class="policy-section">
+						<h2 data-i18n="library.privacy.changes.heading">Зміни до цієї політики</h2>
+						<p data-i18n="library.privacy.changes.body">
+							Якщо ця політика зміниться, оновлена версія буде опублікована за цією ж адресою з новою датою «Останнє оновлення».
+						</p>
+					</div>
+
+					<div class="policy-section">
+						<h2 data-i18n="library.privacy.contact.heading">Контакт</h2>
+						<p data-i18n-html="library.privacy.contact.body">
+							З питань щодо цієї політики звертайтесь: <a href="mailto:romablackrat@ukr.net">romablackrat@ukr.net</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>I18N.init();</script>
+	</body>
+</html>
